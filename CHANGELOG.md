@@ -1,3 +1,17 @@
+## Lib.Web.Mvc (Kain edition)
+### New features
+- Added support for changing default values for JqGrid in JavaScript.
+- Added support Bootstrap4 and it's incosSets (Gurido 5.3.1)
+- For `EditableAttribute` and `SearchableAttribute` added JetBrains annotations
+- Added new fluent API options `ExtendColumnModel` for dynamic additing some column options such as `value` for `editoptions`
+- Added static field `DefaultCompatibilityMode` in `JqGridOptions`
+
+### API changes
+- Removed all old constructors in `JqGridHelper`. Added new constructor which accept `JqGridOptins`
+- In constructors that accept more than one parameter in attributes `Editable` and `Sortable` removed requied bool attribute. In construtors which accept only bool parameter this parameter marked as optional with default value `true`
+- Behavior of ParameterNames and JsonNames changed. Now values in static field are considered as global values and used only in requests and responses. Values in JqGridOptions are considered as local and used for generate JavaScript code.
+
+
 ## Lib.Web.Mvc 6.8.2
 ### Bug Fixes
 - Fix for ErrorTextFormat not available on JqGridNavigatorDeleteActionOptions
