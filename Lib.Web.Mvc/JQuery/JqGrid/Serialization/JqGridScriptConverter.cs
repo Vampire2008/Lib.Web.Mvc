@@ -11,7 +11,7 @@ namespace Lib.Web.Mvc.JQuery.JqGrid.Serialization
     internal class JqGridScriptConverter : JavaScriptConverter
     {
         #region Fields
-        private static ReadOnlyCollection<Type> _supportedTypes = new ReadOnlyCollection<Type>(new List<Type>()
+        private static readonly ReadOnlyCollection<Type> _supportedTypes = new ReadOnlyCollection<Type>(new List<Type>()
         {
             typeof(JqGridOptions),
             typeof(JqGridColumnModel),

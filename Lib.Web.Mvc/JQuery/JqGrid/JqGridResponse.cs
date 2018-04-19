@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Web.Script.Serialization;
+using Lib.Web.Mvc.JQuery.JqGrid.Serialization;
 
 namespace Lib.Web.Mvc.JQuery.JqGrid
 {
@@ -53,6 +55,19 @@ namespace Lib.Web.Mvc.JQuery.JqGrid
         /// Gets or sets custom data that will be send with the response.
         /// </summary>
         public object UserData { get; set; }
+        #endregion
+
+        #region Methods
+        /// <summary>
+        /// Get Json string of JqGrid Response
+        /// </summary>
+        public string GetJson()
+        {
+            var serializer = new JavaScriptSerializer();
+            serializer.RegisterConverters(new[] { new JqGridScriptConverter() });
+            return serializer.Serialize(this);
+        }
+
         #endregion
 
         #region Constructor

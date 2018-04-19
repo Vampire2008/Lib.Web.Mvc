@@ -59,6 +59,7 @@ namespace Lib.Web.Mvc.JQuery.JqGrid
         private string _subGridRowExpanded;
         private string _subGridRowColapsed;
         private string _url;
+        private string _dataString;
 
         #endregion
 
@@ -321,10 +322,19 @@ namespace Lib.Web.Mvc.JQuery.JqGrid
             }
         }
 
+        internal bool IsDataStringSetted { get; private set; }
         /// <summary>
         /// Gets or sets the string of data which will be used when DataType is set to JqGridDataTypes.XmlString or JqGridDataTypes.JsonString (default null).
         /// </summary>
-        public string DataString { get; set; }
+        public string DataString
+        {
+            get => _dataString;
+            set
+            {
+                _dataString = value;
+                IsDataStringSetted = true;
+            }
+        }
 
         /// <summary>
         /// Gets or sets the type of information to expect to represent data in the grid (default JqGridDataTypes.Xml).

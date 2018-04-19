@@ -28,6 +28,10 @@
         /// <summary>
         /// JSON data as string
         /// </summary>
-        JsonString
+        JsonString,
+        /// <summary>
+        /// Client side data
+        /// </summary>
+        Local
     }
 }
