@@ -23,6 +23,15 @@ namespace Lib.Web.Mvc.JQuery.JqGrid.DataAnnotations
 		}
 
 		/// <summary>
+		/// Gets or sets if the value is required while searching.
+		/// </summary>
+		public bool RequiredValidation
+		{
+			get => Rules.Required ?? false;
+			set => Rules.Required = value;
+		}
+
+		/// <summary>
 		/// Gets the value defining if this column can be searched.
 		/// </summary>
 		public bool Searchable { get; }

@@ -129,15 +129,6 @@ namespace Lib.Web.Mvc.JQuery.JqGrid.DataAnnotations
 		}
 
 		/// <summary>
-		/// Gets or sets if the value is required.
-		/// </summary>
-		public bool Required
-		{
-			get => Rules.Required ?? false;
-			set => Rules.Required = value;
-		}
-
-		/// <summary>
 		/// Gets or sets if the value should be validated with custom function.
 		/// </summary>
 		public bool CustomValidation
