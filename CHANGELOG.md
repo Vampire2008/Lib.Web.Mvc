@@ -1,4 +1,15 @@
-## Lib.Web.Mvc (Kain edition)
+## Lib.Web.Mvc (Kain Edition) 7.1.0
+### Additions and Changes
+ - Added JqGrid options `PagerButtons` (`pgbuttons`), `PagerInput` (`pginput`), `PagerText` (`pgtext`)
+ - Added property that defines buttons or separators must be added after Inline Navigator buttons
+ - Added rest of options for `DataType`
+
+### Bug Fixes
+ - Fixed detection override `Value` in `ElementAttribute`
+ - Fixed detection override `PostData` in `EditableAttribute`
+
+
+## Lib.Web.Mvc (Kain edition) 7.0.0
 ### New features
 - Added support for changing default values for JqGrid in JavaScript.
 - Added support Bootstrap4 and it's incosSets (Gurido 5.3.1)
