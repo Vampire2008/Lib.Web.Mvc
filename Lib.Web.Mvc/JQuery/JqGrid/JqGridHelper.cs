@@ -907,10 +907,10 @@ namespace Lib.Web.Mvc.JQuery.JqGrid
 				javaScriptBuilder.AppendFormat("pager: {0},", PagerSelector).AppendLine();
 
 				if (_options.PagerButtons.HasValue)
-					javaScriptBuilder.AppendFormat("pgbuttons: {0},", _options.PagerButtons.Value).AppendLine();
+					javaScriptBuilder.AppendFormat("pgbuttons: {0},", _options.PagerButtons.Value.ToString().ToLower()).AppendLine();
 
 				if (_options.PagerInput.HasValue)
-					javaScriptBuilder.AppendFormat("pginput: {0},", _options.PagerInput.Value).AppendLine();
+					javaScriptBuilder.AppendFormat("pginput: {0},", _options.PagerInput.Value.ToString().ToLower()).AppendLine();
 
 				if (_options.IsPagerTextSetted)
 					javaScriptBuilder.AppendFormat("pgtext: {0},", _options.PagerText.ToNullString()).AppendLine();
