@@ -1,5 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel;
+using System.Linq;
+using System.Web.Mvc;
 
 namespace Lib.Web.Mvc.JQuery.JqGrid
 {
@@ -58,7 +60,9 @@ namespace Lib.Web.Mvc.JQuery.JqGrid
 
             if (Value != null)
             {
-                foreach (PropertyDescriptor property in TypeDescriptor.GetProperties(Value))
+                ModelMetadata jqGridModelMetadata = ModelMetadataProviders.Current.GetMetadataForType(null, Value.GetType());
+                IEnumerable<string> availableProperties = jqGridModelMetadata.Properties.Where(p => p.IsValidForColumn()).Select(p => p.PropertyName);
+                foreach (PropertyDescriptor property in from PropertyDescriptor prop in TypeDescriptor.GetProperties(Value) where availableProperties.Contains(prop.Name) select prop)
                     values.Add(property.GetValue(Value));
             }
 
@@ -71,7 +75,9 @@ namespace Lib.Web.Mvc.JQuery.JqGrid
 
             if (Value != null)
             {
-                foreach (PropertyDescriptor property in TypeDescriptor.GetProperties(Value))
+                ModelMetadata jqGridModelMetadata = ModelMetadataProviders.Current.GetMetadataForType(null, Value.GetType());
+                IEnumerable<string> availableProperties = jqGridModelMetadata.Properties.Where(p => p.IsValidForColumn()).Select(p => p.PropertyName);
+                foreach (PropertyDescriptor property in from PropertyDescriptor prop in TypeDescriptor.GetProperties(Value) where availableProperties.Contains(prop.Name) select prop)
                     values.Add(property.Name, property.GetValue(Value));
             }
 
