@@ -1,0 +1,35 @@
+﻿using System;
+using System.IO;
+using System.Web.Mvc;
+using System.Web.Script.Serialization;
+
+namespace Lib.Web.Mvc.Kain.JqGrid.ModelBinders
+{
+    internal class JqGridJsonModelBinder : DefaultModelBinder
+    {
+        public override object BindModel(ControllerContext controllerContext, ModelBindingContext bindingContext)
+        {
+            if (controllerContext == null)
+                throw new ArgumentNullException(nameof(controllerContext));
+            if (bindingContext == null)
+                throw new ArgumentNullException(nameof(bindingContext));
+
+            JavaScriptSerializer serializer = new JavaScriptSerializer();
+            serializer.RegisterConverters(new JavaScriptConverter[] { new Serialization.JqGridScriptConverter() });
+
+            string jsonString;
+            if (controllerContext.RequestContext.HttpContext.Request.ContentType.Contains("application/json"))
+            {
+                controllerContext.HttpContext.Request.InputStream.Seek(0, SeekOrigin.Begin);
+                using (StreamReader jsonReader = new StreamReader(controllerContext.HttpContext.Request.InputStream))
+                    jsonString = jsonReader.ReadToEnd();
+            }
+            else
+                jsonString = controllerContext.HttpContext.Request[bindingContext.ModelName];
+
+            if (string.IsNullOrEmpty(jsonString))
+                return null;
+            return serializer.Deserialize(jsonString, bindingContext.ModelType);
+        }
+    }
+}

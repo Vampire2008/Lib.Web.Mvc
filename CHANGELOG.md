@@ -1,3 +1,13 @@
+﻿## Lib.Web.Mvc.JqGridFork 7.2.0
+### Additions and Changes
+ - Remove all non-JqGrid modules. Because I forked only JqGrid. Other modules continue to develop their author [Tomasz Pęczek](https://github.com/tpeczek). If you need them use original library [Lib.Web.Mvc](https://github.com/tpeczek/Lib.Web.Mvc).
+ - Changed base namespace to avoid collisions when using with original library.
+ - Added new options for TreeGrid:
+   - `TreeRootLevel` (`tree_root_level`)
+   - `TreeGridBigData` (`treeGrid_bigData`) - only in Guriddo JqGrid since 5.3
+   - `TreeIcons` (`treeIcons`)
+   - `TreeReader` (`treeReader`)
+
 ## Lib.Web.Mvc (Kain Edition) 7.1.0
 ### Additions and Changes
  - Added JqGrid options `PagerButtons` (`pgbuttons`), `PagerInput` (`pginput`), `PagerText` (`pgtext`)

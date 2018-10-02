@@ -1,12 +1,8 @@
-Lib.Web.Mvc (Kain edition)
+Lib.Web.Mvc.JqGridFork
 ===========
 
-
-Lib.Web.Mvc is a library which contains some helper classes for ASP.NET MVC such as strongly typed jqGrid helper, attribute and helper providing support for HTTP/2 Server Push with Cache Digest, attribute and helpers providing support for Content Security Policy Level 2, FileResult providing support for Range Requests, action result and helper providing support for XSL transformation and more.
-
-## Kain edition
-
-My edition contains support changing default values for JqGrid in JavaScript. But there are some changes in public API. So if you update to my edition it will require change your code.
+My fork contains support changing default values for JqGrid in JavaScript. But there are some changes in public API. So if you update to my edition it will require change your code.
+And in my fork excluded all non JqGrid modules. If you want to use it use original library together with my fork.
 
 ## Other
 

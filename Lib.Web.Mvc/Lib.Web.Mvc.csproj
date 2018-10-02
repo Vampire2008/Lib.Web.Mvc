@@ -8,8 +8,8 @@
     <ProjectGuid>{1332384E-DDEF-4B55-81E8-F6F0B0C779DC}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Lib.Web.Mvc</RootNamespace>
-    <AssemblyName>Lib.Web.Mvc</AssemblyName>
+    <RootNamespace>Lib.Web.Mvc.Kain.JqGrid</RootNamespace>
+    <AssemblyName>Lib.Web.Mvc.JqGridFork</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
@@ -24,7 +24,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>bin\Debug\Lib.Web.Mvc.xml</DocumentationFile>
+    <DocumentationFile>bin\Debug\Lib.Web.Mvc.JqGridFork.xml</DocumentationFile>
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
@@ -34,7 +34,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>bin\Release\Lib.Web.Mvc.xml</DocumentationFile>
+    <DocumentationFile>bin\Release\Lib.Web.Mvc.JqGridFork.xml</DocumentationFile>
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup>
@@ -45,129 +45,111 @@
     </AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="AcceptAjaxRequestAttribute.cs" />
-    <Compile Include="AjaxRequestAttribute.cs" />
-    <Compile Include="ContentSecurityPolicyAttribute.cs" />
-    <Compile Include="Html\ContentSecurityPolicyExtensions.cs" />
-    <Compile Include="Html\RenderXmlExtensions.cs" />
-    <Compile Include="Html\PushPromiseExtensions.cs" />
-    <Compile Include="Http\CacheDigestHashAlgorithm.cs" />
-    <Compile Include="Http\CacheDigestHeaderValue.cs" />
-    <Compile Include="Http\CacheDigestValue.cs" />
-    <Compile Include="Http\EntityTagGenerator.cs" />
-    <Compile Include="Http\RequestHeaders.cs" />
     <Compile Include="JetBrains.Annotations.cs" />
-    <Compile Include="JQuery\JqGrid\Constants\JqGridColumnPredefinedFormatters.cs" />
-    <Compile Include="JQuery\JqGrid\Constants\JqGridFilterToolbarDefaults.cs" />
-    <Compile Include="JQuery\JqGrid\Constants\JqGridNavigatorDefaults.cs" />
-    <Compile Include="JQuery\JqGrid\Constants\JqGridOptionsDefaults.cs" />
-    <Compile Include="JQuery\JqGrid\Constants\JQueryUIWidgetsDefaults.cs" />
-    <Compile Include="JQuery\JqGrid\IJqGridHelper.cs" />
-    <Compile Include="JQuery\JqGrid\IJqGridNavigatorPageableFormActionOptions.cs" />
-    <Compile Include="JQuery\JqGrid\JqGridBootstrap4IconSet.cs" />
-    <Compile Include="JQuery\JqGrid\JqGridColumnSortTypes.cs" />
-    <Compile Include="JQuery\JqGrid\JqGridCompatibilityModes.cs" />
-    <Compile Include="JQuery\JqGrid\JqGridExtendColumnModel.cs" />
-    <Compile Include="JQuery\JqGrid\JqGridFormButtonIcon.cs" />
-    <Compile Include="JQuery\JqGrid\JqGridFormButtonIconPositions.cs" />
-    <Compile Include="JQuery\JqGrid\JqGridFormKeyboardNavigation.cs" />
-    <Compile Include="JQuery\JqGrid\JqGridGroupHeader.cs" />
-    <Compile Include="JQuery\JqGrid\JqGridInlineNavigatorActionOptions.cs" />
-    <Compile Include="JQuery\JqGrid\JqGridInlineNavigatorAddActionOptions.cs" />
-    <Compile Include="JQuery\JqGrid\JqGridInlineNavigatorOptions.cs" />
-    <Compile Include="JQuery\JqGrid\JqGridMultiKeys.cs" />
-    <Compile Include="JQuery\JqGrid\JqGridNavigatorDeleteActionOptions.cs" />
-    <Compile Include="JQuery\JqGrid\JqGridNavigatorEditActionOptions.cs" />
-    <Compile Include="JQuery\JqGrid\JqGridNavigatorModifyActionOptions.cs" />
-    <Compile Include="JQuery\JqGrid\JqGridNavigatorViewActionOptions.cs" />
-    <Compile Include="JQuery\JqGrid\JqGridNavigatorFormActionOptions.cs" />
-    <Compile Include="JQuery\JqGrid\JqGridNavigatorOptionsBase.cs" />
-    <Compile Include="JQuery\JqGrid\JqGridNavigatorPagers.cs" />
-    <Compile Include="JQuery\JqGrid\DataAnnotations\JqGridColumnElementAttribute.cs" />
-    <Compile Include="JQuery\JqGrid\DataAnnotations\JqGridColumnLabelAttribute.cs" />
-    <Compile Include="JQuery\JqGrid\DataAnnotations\JqGridColumnMappingAttribute.cs" />
-    <Compile Include="JQuery\JqGrid\DataAnnotations\JqGridColumnSummaryAttribute.cs" />
-    <Compile Include="JQuery\JqGrid\DataAnnotations\JqGridModelMetadataExtensions.cs" />
-    <Compile Include="JQuery\JqGrid\JqGridColumnElementOptions.cs" />
-    <Compile Include="JQuery\JqGrid\JqGridColumnLabelOptions.cs" />
-    <Compile Include="JQuery\JqGrid\JqGridColumnSummaryTypes.cs" />
-    <Compile Include="JQuery\JqGrid\JqGridDynamicScrollingModes.cs" />
-    <Compile Include="JQuery\JqGrid\JqGridFilterGridOptions.cs" />
-    <Compile Include="JQuery\JqGrid\JqGridFilterGridRowModel.cs" />
-    <Compile Include="JQuery\JqGrid\JqGridFilterGridTypes.cs" />
-    <Compile Include="JQuery\JqGrid\JqGridFilterOptions.cs" />
-    <Compile Include="JQuery\JqGrid\JqGridGroupingView.cs" />
-    <Compile Include="JQuery\JqGrid\JqGridJsonReader.cs" />
-    <Compile Include="JQuery\JqGrid\JqGridLanguageDirections.cs" />
-    <Compile Include="JQuery\JqGrid\JqGridNavigatorButtonOptions.cs" />
-    <Compile Include="JQuery\JqGrid\JqGridNavigatorButtonPositions.cs" />
-    <Compile Include="JQuery\JqGrid\JqGridNavigatorControlOptions.cs" />
-    <Compile Include="JQuery\JqGrid\JqGridNavigatorSeparatorOptions.cs" />
-    <Compile Include="JQuery\JqGrid\JqGridNewRowPositions.cs" />
-    <Compile Include="JQuery\JqGrid\JqGridParametersNames.cs" />
-    <Compile Include="JQuery\JqGrid\JqGridColumnDataEvent.cs" />
-    <Compile Include="JQuery\JqGrid\JqGridSearchOperators.cs" />
-    <Compile Include="JQuery\JqGrid\JqGridColumnSearchOptions.cs" />
-    <Compile Include="JQuery\JqGrid\JqGridColumnSearchTypes.cs" />
-    <Compile Include="JQuery\JqGrid\DataAnnotations\JqGridColumnSearchableAttribute.cs" />
-    <Compile Include="JQuery\JqGrid\JqGridFilterToolbarOptions.cs" />
-    <Compile Include="JQuery\JqGrid\JqGridNavigatorSearchActionOptions.cs" />
-    <Compile Include="JQuery\JqGrid\JqGridNestedSetTreeRecord`1.cs" />
-    <Compile Include="JQuery\JqGrid\JqGridNestedSetTreeRecord.cs" />
-    <Compile Include="JQuery\JqGrid\DataAnnotations\JqGridColumnEditableAttribute.cs" />
-    <Compile Include="JQuery\JqGrid\DataAnnotations\JqGridColumnFormatterAttribute.cs" />
-    <Compile Include="JQuery\JqGrid\JqGridAdjacencyTreeRecord.cs" />
-    <Compile Include="JQuery\JqGrid\JqGridAdjacencyTreeRecord`1.cs" />
-    <Compile Include="JQuery\JqGrid\JqGridCellEditingSubmitModes.cs" />
-    <Compile Include="JQuery\JqGrid\JqGridColumnEditOptions.cs" />
-    <Compile Include="JQuery\JqGrid\JqGridColumnRules.cs" />
-    <Compile Include="JQuery\JqGrid\JqGridColumnFormatterOptions.cs" />
-    <Compile Include="JQuery\JqGrid\JqGridColumnFormOptions.cs" />
-    <Compile Include="JQuery\JqGrid\JqGridNavigatorActionOptions.cs" />
-    <Compile Include="JQuery\JqGrid\JqGridNavigatorOptions.cs" />
-    <Compile Include="JQuery\JqGrid\JqGridRecord`1.cs" />
-    <Compile Include="JQuery\JqGrid\DataAnnotations\JqGridColumnLayoutAttribute.cs" />
-    <Compile Include="JQuery\JqGrid\DataAnnotations\JqGridColumnSortableAttribute.cs" />
-    <Compile Include="JQuery\JqGrid\JqGridRefreshModes.cs" />
-    <Compile Include="JQuery\JqGrid\JqGridRequestSearchingFilter.cs" />
-    <Compile Include="JQuery\JqGrid\JqGridRequestSearchingFilters.cs" />
-    <Compile Include="JQuery\JqGrid\JqGridResponse.cs" />
-    <Compile Include="JQuery\JqGrid\JqGridOptions`1.cs" />
-    <Compile Include="JQuery\JqGrid\JqGridAlignments.cs" />
-    <Compile Include="JQuery\JqGrid\JqGridColumnModel.cs" />
-    <Compile Include="JQuery\JqGrid\JqGridConfiguration.cs" />
-    <Compile Include="JQuery\JqGrid\JqGridDataTypes.cs" />
-    <Compile Include="JQuery\JqGrid\JqGridHelper.cs" />
-    <Compile Include="JQuery\JqGrid\JqGridJsonResult.cs" />
-    <Compile Include="JQuery\JqGrid\JqGridMethodTypes.cs" />
-    <Compile Include="JQuery\JqGrid\JqGridOptions.cs" />
-    <Compile Include="JQuery\JqGrid\JqGridRequest.cs" />
-    <Compile Include="JQuery\JqGrid\JqGridRecord.cs" />
-    <Compile Include="JQuery\JqGrid\JqGridSearchGroupingOperators.cs" />
-    <Compile Include="JQuery\JqGrid\JqGridSortingOrders.cs" />
-    <Compile Include="JQuery\JqGrid\JqGridStyleUIOptions.cs" />
-    <Compile Include="JQuery\JqGrid\JqGridSubgridModel.cs" />
-    <Compile Include="JQuery\JqGrid\JqGridSubgridModel`1.cs" />
-    <Compile Include="JQuery\JqGrid\JqGridTreeGridModels.cs" />
-    <Compile Include="JQuery\JqGrid\JqGridTreeRecord.cs" />
-    <Compile Include="JQuery\JqGrid\JqGridUtility.cs" />
-    <Compile Include="JQuery\JqGrid\ModelBinders\JqGridJsonModelBinder.cs" />
-    <Compile Include="JQuery\JqGrid\ModelBinders\JqGridRequestModelBinder.cs" />
-    <Compile Include="JQuery\JqGrid\JqGridColumnEditTypes.cs" />
-    <Compile Include="JQuery\JqGrid\Serialization\JqGridScriptConverter.cs" />
-    <Compile Include="JQuery\JqGrid\SettedString.cs" />
-    <Compile Include="JQuery\TreeView\TreeViewNode.cs" />
-    <Compile Include="NoCacheAttribute.cs" />
-    <Compile Include="NoAjaxRequestAttribute.cs" />
+    <Compile Include="Constants\JqGridColumnPredefinedFormatters.cs" />
+    <Compile Include="Constants\JqGridFilterToolbarDefaults.cs" />
+    <Compile Include="Constants\JqGridNavigatorDefaults.cs" />
+    <Compile Include="Constants\JqGridOptionsDefaults.cs" />
+    <Compile Include="Constants\JQueryUIWidgetsDefaults.cs" />
+    <Compile Include="IJqGridHelper.cs" />
+    <Compile Include="IJqGridNavigatorPageableFormActionOptions.cs" />
+    <Compile Include="JqGridAdjacencyTreeReader.cs" />
+    <Compile Include="JqGridBootstrap4IconSet.cs" />
+    <Compile Include="JqGridColumnSortTypes.cs" />
+    <Compile Include="JqGridCompatibilityModes.cs" />
+    <Compile Include="JqGridExtendColumnModel.cs" />
+    <Compile Include="JqGridFormButtonIcon.cs" />
+    <Compile Include="JqGridFormButtonIconPositions.cs" />
+    <Compile Include="JqGridFormKeyboardNavigation.cs" />
+    <Compile Include="JqGridGroupHeader.cs" />
+    <Compile Include="JqGridInlineNavigatorActionOptions.cs" />
+    <Compile Include="JqGridInlineNavigatorAddActionOptions.cs" />
+    <Compile Include="JqGridInlineNavigatorOptions.cs" />
+    <Compile Include="JqGridMultiKeys.cs" />
+    <Compile Include="JqGridNavigatorDeleteActionOptions.cs" />
+    <Compile Include="JqGridNavigatorEditActionOptions.cs" />
+    <Compile Include="JqGridNavigatorModifyActionOptions.cs" />
+    <Compile Include="JqGridNavigatorViewActionOptions.cs" />
+    <Compile Include="JqGridNavigatorFormActionOptions.cs" />
+    <Compile Include="JqGridNavigatorOptionsBase.cs" />
+    <Compile Include="JqGridNavigatorPagers.cs" />
+    <Compile Include="DataAnnotations\JqGridColumnElementAttribute.cs" />
+    <Compile Include="DataAnnotations\JqGridColumnLabelAttribute.cs" />
+    <Compile Include="DataAnnotations\JqGridColumnMappingAttribute.cs" />
+    <Compile Include="DataAnnotations\JqGridColumnSummaryAttribute.cs" />
+    <Compile Include="DataAnnotations\JqGridModelMetadataExtensions.cs" />
+    <Compile Include="JqGridColumnElementOptions.cs" />
+    <Compile Include="JqGridColumnLabelOptions.cs" />
+    <Compile Include="JqGridColumnSummaryTypes.cs" />
+    <Compile Include="JqGridDynamicScrollingModes.cs" />
+    <Compile Include="JqGridFilterGridOptions.cs" />
+    <Compile Include="JqGridFilterGridRowModel.cs" />
+    <Compile Include="JqGridFilterGridTypes.cs" />
+    <Compile Include="JqGridFilterOptions.cs" />
+    <Compile Include="JqGridGroupingView.cs" />
+    <Compile Include="JqGridJsonReader.cs" />
+    <Compile Include="JqGridLanguageDirections.cs" />
+    <Compile Include="JqGridNavigatorButtonOptions.cs" />
+    <Compile Include="JqGridNavigatorButtonPositions.cs" />
+    <Compile Include="JqGridNavigatorControlOptions.cs" />
+    <Compile Include="JqGridNavigatorSeparatorOptions.cs" />
+    <Compile Include="JqGridNestedTreeReader.cs" />
+    <Compile Include="JqGridNewRowPositions.cs" />
+    <Compile Include="JqGridParametersNames.cs" />
+    <Compile Include="JqGridColumnDataEvent.cs" />
+    <Compile Include="JqGridSearchOperators.cs" />
+    <Compile Include="JqGridColumnSearchOptions.cs" />
+    <Compile Include="JqGridColumnSearchTypes.cs" />
+    <Compile Include="DataAnnotations\JqGridColumnSearchableAttribute.cs" />
+    <Compile Include="JqGridFilterToolbarOptions.cs" />
+    <Compile Include="JqGridNavigatorSearchActionOptions.cs" />
+    <Compile Include="JqGridNestedSetTreeRecord`1.cs" />
+    <Compile Include="JqGridNestedSetTreeRecord.cs" />
+    <Compile Include="DataAnnotations\JqGridColumnEditableAttribute.cs" />
+    <Compile Include="DataAnnotations\JqGridColumnFormatterAttribute.cs" />
+    <Compile Include="JqGridAdjacencyTreeRecord.cs" />
+    <Compile Include="JqGridAdjacencyTreeRecord`1.cs" />
+    <Compile Include="JqGridCellEditingSubmitModes.cs" />
+    <Compile Include="JqGridColumnEditOptions.cs" />
+    <Compile Include="JqGridColumnRules.cs" />
+    <Compile Include="JqGridColumnFormatterOptions.cs" />
+    <Compile Include="JqGridColumnFormOptions.cs" />
+    <Compile Include="JqGridNavigatorActionOptions.cs" />
+    <Compile Include="JqGridNavigatorOptions.cs" />
+    <Compile Include="JqGridRecord`1.cs" />
+    <Compile Include="DataAnnotations\JqGridColumnLayoutAttribute.cs" />
+    <Compile Include="DataAnnotations\JqGridColumnSortableAttribute.cs" />
+    <Compile Include="JqGridRefreshModes.cs" />
+    <Compile Include="JqGridRequestSearchingFilter.cs" />
+    <Compile Include="JqGridRequestSearchingFilters.cs" />
+    <Compile Include="JqGridResponse.cs" />
+    <Compile Include="JqGridOptions`1.cs" />
+    <Compile Include="JqGridAlignments.cs" />
+    <Compile Include="JqGridColumnModel.cs" />
+    <Compile Include="JqGridConfiguration.cs" />
+    <Compile Include="JqGridDataTypes.cs" />
+    <Compile Include="JqGridHelper.cs" />
+    <Compile Include="JqGridJsonResult.cs" />
+    <Compile Include="JqGridMethodTypes.cs" />
+    <Compile Include="JqGridOptions.cs" />
+    <Compile Include="JqGridRequest.cs" />
+    <Compile Include="JqGridRecord.cs" />
+    <Compile Include="JqGridSearchGroupingOperators.cs" />
+    <Compile Include="JqGridSortingOrders.cs" />
+    <Compile Include="JqGridStyleUIOptions.cs" />
+    <Compile Include="JqGridSubgridModel.cs" />
+    <Compile Include="JqGridSubgridModel`1.cs" />
+    <Compile Include="JqGridTreeGridModels.cs" />
+    <Compile Include="JqGridTreeIcons.cs" />
+    <Compile Include="JqGridTreeReader.cs" />
+    <Compile Include="JqGridTreeRecord.cs" />
+    <Compile Include="JqGridUtility.cs" />
+    <Compile Include="ModelBinders\JqGridJsonModelBinder.cs" />
+    <Compile Include="ModelBinders\JqGridRequestModelBinder.cs" />
+    <Compile Include="JqGridColumnEditTypes.cs" />
+    <Compile Include="Serialization\JqGridScriptConverter.cs" />
+    <Compile Include="SettedString.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="PushPromiseAttribute.cs" />
-    <Compile Include="PushPromiseTable.cs" />
-    <Compile Include="RangeFileContentResult.cs" />
-    <Compile Include="RangeFilePathResult.cs" />
-    <Compile Include="RangeFileResult.cs" />
-    <Compile Include="RangeFileStreamResult.cs" />
-    <Compile Include="RequireHstsAttribute.cs" />
-    <Compile Include="XmlActionResult.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Microsoft.Web.Infrastructure">
