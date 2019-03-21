@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Text;
 
-namespace Lib.Web.Mvc.Kain.JqGrid
+namespace Lib.Web.Mvc.JqGridFork
 {
     /// <inheritdoc />
     /// <summary>

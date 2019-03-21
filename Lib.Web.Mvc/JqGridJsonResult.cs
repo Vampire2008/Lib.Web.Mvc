@@ -2,9 +2,9 @@
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Script.Serialization;
-using Lib.Web.Mvc.Kain.JqGrid.Serialization;
+using Lib.Web.Mvc.JqGridFork.Serialization;
 
-namespace Lib.Web.Mvc.Kain.JqGrid
+namespace Lib.Web.Mvc.JqGridFork
 {
     /// <summary>
     /// Represents a class that is used to send object from Lib.Web.Mvc.JQuery.JqGrid namespace as JSON-formatted content to the response, converted the way jqGrid expects it.

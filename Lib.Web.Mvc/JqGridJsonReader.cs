@@ -1,7 +1,7 @@
 ﻿using System;
-using Lib.Web.Mvc.Kain.JqGrid.Constants;
+using Lib.Web.Mvc.JqGridFork.Constants;
 
-namespace Lib.Web.Mvc.Kain.JqGrid
+namespace Lib.Web.Mvc.JqGridFork
 {
     /// <summary>
     /// Class which represents JSON reader for jqGrid records.

@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using System.Web.Mvc;
-using Lib.Web.Mvc.Kain.JqGrid.DataAnnotations;
+using Lib.Web.Mvc.JqGridFork.DataAnnotations;
 
-namespace Lib.Web.Mvc.Kain.JqGrid
+namespace Lib.Web.Mvc.JqGridFork
 {
     /// <summary>
     /// Class which represents subgrid model for jqGrid.

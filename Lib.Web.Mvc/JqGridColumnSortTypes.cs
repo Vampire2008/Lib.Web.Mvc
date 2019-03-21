@@ -1,4 +1,4 @@
-﻿namespace Lib.Web.Mvc.Kain.JqGrid
+﻿namespace Lib.Web.Mvc.JqGridFork
 {
     /// <summary>
     /// Defines the type of the column for appropriate sorting when datatype is local.

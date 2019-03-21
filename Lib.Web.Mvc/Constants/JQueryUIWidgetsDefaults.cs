@@ -1,4 +1,4 @@
-﻿namespace Lib.Web.Mvc.Kain.JqGrid.Constants
+﻿namespace Lib.Web.Mvc.JqGridFork.Constants
 {
     /// <summary>
     /// Contains default options values for jQuery UI widgets integrations. 

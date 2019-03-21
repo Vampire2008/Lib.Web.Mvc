@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Web.Mvc;
 
-namespace Lib.Web.Mvc.Kain.JqGrid.DataAnnotations
+namespace Lib.Web.Mvc.JqGridFork.DataAnnotations
 {
     /// <summary>
     /// Specifies the label in the header for the column.

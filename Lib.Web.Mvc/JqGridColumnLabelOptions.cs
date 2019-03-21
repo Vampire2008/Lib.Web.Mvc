@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Lib.Web.Mvc.Kain.JqGrid
+namespace Lib.Web.Mvc.JqGridFork
 {
     internal class JqGridColumnLabelOptions
     {

@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
 
-namespace Lib.Web.Mvc.Kain.JqGrid.DataAnnotations
+namespace Lib.Web.Mvc.JqGridFork.DataAnnotations
 {
     /// <summary>
     /// Base class which specifies the options for jqGrid editable or searchable column element

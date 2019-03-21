@@ -1,4 +1,4 @@
-﻿namespace Lib.Web.Mvc.Kain.JqGrid
+﻿namespace Lib.Web.Mvc.JqGridFork
 {
     /// <summary>
     /// Base class for classes which represents options for jqGrid Navigator controls

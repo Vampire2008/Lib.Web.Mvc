@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Text;
 using System.Web.Mvc;
-using Lib.Web.Mvc.Kain.JqGrid.Constants;
+using Lib.Web.Mvc.JqGridFork.Constants;
 
-namespace Lib.Web.Mvc.Kain.JqGrid.DataAnnotations
+namespace Lib.Web.Mvc.JqGridFork.DataAnnotations
 {
     /// <summary>
     /// Specifies the custom formatter for column

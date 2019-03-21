@@ -3,7 +3,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Web.Mvc;
 
-namespace Lib.Web.Mvc.Kain.JqGrid
+namespace Lib.Web.Mvc.JqGridFork
 {
     /// <summary>
     /// Class which represents record for jqGrid.

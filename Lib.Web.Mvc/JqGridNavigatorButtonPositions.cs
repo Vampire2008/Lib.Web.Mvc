@@ -1,4 +1,4 @@
-﻿namespace Lib.Web.Mvc.Kain.JqGrid
+﻿namespace Lib.Web.Mvc.JqGridFork
 {
     /// <summary>
     /// Defines available positions of jqGrid Navigator button.

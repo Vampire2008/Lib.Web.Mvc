@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Lib.Web.Mvc.Kain.JqGrid
+namespace Lib.Web.Mvc.JqGridFork
 {
     /// <summary>
     /// Defines available operators for search fields for jqGrid

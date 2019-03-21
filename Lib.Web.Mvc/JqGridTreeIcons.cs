@@ -1,4 +1,4 @@
-﻿namespace Lib.Web.Mvc.Kain.JqGrid
+﻿namespace Lib.Web.Mvc.JqGridFork
 {
     /// <summary>
     /// Icons used in Tree mode

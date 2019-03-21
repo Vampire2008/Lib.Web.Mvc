@@ -1,4 +1,4 @@
-﻿namespace Lib.Web.Mvc.Kain.JqGrid
+﻿namespace Lib.Web.Mvc.JqGridFork
 {
     /// <summary>
     /// Class which represents rules for jqGrid editable or searchable column

@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Lib.Web.Mvc.Kain.JqGrid.Constants
+namespace Lib.Web.Mvc.JqGridFork.Constants
 {
     /// <summary>
     /// Contains default values for jqGrid filter toolbar properties

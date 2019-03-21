@@ -4,12 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Web.Mvc;
-using Lib.Web.Mvc.Kain.JqGrid.Constants;
-using Lib.Web.Mvc.Kain.JqGrid.DataAnnotations;
+using Lib.Web.Mvc.JqGridFork.Constants;
+using Lib.Web.Mvc.JqGridFork.DataAnnotations;
 
 // ReSharper disable InconsistentNaming
 
-namespace Lib.Web.Mvc.Kain.JqGrid
+namespace Lib.Web.Mvc.JqGridFork
 {
     /// <summary>
     /// Base class which represents options for jqGrid editable or searchable column element

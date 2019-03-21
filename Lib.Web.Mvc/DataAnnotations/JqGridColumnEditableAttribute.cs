@@ -2,7 +2,7 @@
 using System.Web.Mvc;
 using System.Web.Routing;
 
-namespace Lib.Web.Mvc.Kain.JqGrid.DataAnnotations
+namespace Lib.Web.Mvc.JqGridFork.DataAnnotations
 {
     /// <inheritdoc />
     /// <summary>

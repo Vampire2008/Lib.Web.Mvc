@@ -1,6 +1,6 @@
 ﻿using System.Web.Mvc;
 
-namespace Lib.Web.Mvc.Kain.JqGrid
+namespace Lib.Web.Mvc.JqGridFork
 {
     /// <summary>
     /// An interface representing helper class for generating jqGrid HMTL and JavaScript.

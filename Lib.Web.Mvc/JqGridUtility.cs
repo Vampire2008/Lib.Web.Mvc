@@ -2,7 +2,7 @@
 using System.Data.Linq;
 using System.Web.Mvc;
 
-namespace Lib.Web.Mvc.Kain.JqGrid
+namespace Lib.Web.Mvc.JqGridFork
 {
     internal static class JqGridUtility
     {

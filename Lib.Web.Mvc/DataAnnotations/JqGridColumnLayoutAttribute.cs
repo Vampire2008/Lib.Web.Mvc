@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Web.Mvc;
 
-namespace Lib.Web.Mvc.Kain.JqGrid.DataAnnotations
+namespace Lib.Web.Mvc.JqGridFork.DataAnnotations
 {
     /// <summary>
     /// Specifies the layout attributes of grid column

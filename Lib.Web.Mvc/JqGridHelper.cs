@@ -5,10 +5,10 @@ using System.Linq;
 using System.Text;
 using System.Web.Mvc;
 using System.Web.Script.Serialization;
-using Lib.Web.Mvc.Kain.JqGrid.Constants;
-using Lib.Web.Mvc.Kain.JqGrid.Serialization;
+using Lib.Web.Mvc.JqGridFork.Constants;
+using Lib.Web.Mvc.JqGridFork.Serialization;
 
-namespace Lib.Web.Mvc.Kain.JqGrid
+namespace Lib.Web.Mvc.JqGridFork
 {
     /// <summary>
     /// Helper class for generating jqGrid HMTL and JavaScript

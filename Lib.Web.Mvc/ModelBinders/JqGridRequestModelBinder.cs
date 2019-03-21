@@ -2,7 +2,7 @@
 using System.Web.Mvc;
 using System.Web.Script.Serialization;
 
-namespace Lib.Web.Mvc.Kain.JqGrid.ModelBinders
+namespace Lib.Web.Mvc.JqGridFork.ModelBinders
 {
     internal class JqGridRequestModelBinder : DefaultModelBinder
     {

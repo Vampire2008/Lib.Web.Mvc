@@ -4,9 +4,9 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Web.Script.Serialization;
-using Lib.Web.Mvc.Kain.JqGrid.Constants;
+using Lib.Web.Mvc.JqGridFork.Constants;
 
-namespace Lib.Web.Mvc.Kain.JqGrid.Serialization
+namespace Lib.Web.Mvc.JqGridFork.Serialization
 {
     internal class JqGridScriptConverter : JavaScriptConverter
     {

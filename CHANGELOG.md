@@ -1,4 +1,9 @@
-﻿## Lib.Web.Mvc.JqGridFork 7.2.0
+﻿## Lib.Web.Mvc.JqGridFork 7.2.1
+
+ - Renamed namespace to `Lib.Web.Mvc.JqGridFork`
+ - Reduced versions of depended nuget packages for more compability
+
+## Lib.Web.Mvc.JqGridFork 7.2.0
 ### Additions and Changes
  - Remove all non-JqGrid modules. Because I forked only JqGrid. Other modules continue to develop their author [Tomasz Pęczek](https://github.com/tpeczek). If you need them use original library [Lib.Web.Mvc](https://github.com/tpeczek/Lib.Web.Mvc).
  - Changed base namespace to avoid collisions when using with original library.

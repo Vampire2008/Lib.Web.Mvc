@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Web.Script.Serialization;
-using Lib.Web.Mvc.Kain.JqGrid.Serialization;
+using Lib.Web.Mvc.JqGridFork.Serialization;
 
-namespace Lib.Web.Mvc.Kain.JqGrid
+namespace Lib.Web.Mvc.JqGridFork
 {
     /// <summary>
     /// Class which represents response for jqGrid.

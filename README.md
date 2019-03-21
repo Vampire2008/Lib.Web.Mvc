@@ -10,7 +10,9 @@ Other information you will find on [original repositoty](https://github.com/tpec
 
 ## Copyright and License
 
-Copyright © 2009 - 2018 Tomasz Pęczek
+Copyright © 2019 Kislenko Mikhail
+
+Original source code written by Tomasz Pęczek
 
 From October 2009 to August 2014 licensed under the Ms-PL License.
 
