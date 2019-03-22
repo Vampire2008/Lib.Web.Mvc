@@ -4,6 +4,10 @@ Lib.Web.Mvc.JqGridFork
 My fork contains support changing default values for JqGrid in JavaScript. But there are some changes in public API. So if you update to my edition it will require change your code.
 And in my fork excluded all non JqGrid modules. If you want to use it use original library together with my fork.
 
+# How to
+
+Please read [wiki](https://github.com/Vampire2008/Lib.Web.Mvc.JqGridFork/wiki) of this repository.
+
 ## Other
 
 Other information you will find on [original repositoty](https://github.com/tpeczek/Lib.Web.Mvc)
