@@ -1,44 +1,39 @@
 ﻿namespace Lib.Web.Mvc.JqGridFork
 {
-    /// <summary>
-    /// Class which represents options for form editing navigation keys.
-    /// </summary>
-    public class JqGridFormKeyboardNavigation
-    {
-        #region Properties
-        /// <summary>
-        /// Gets or sets the value indicating if keyboard navigation is enabled.
-        /// </summary>
-        public bool Enabled { get; set; }
+	/// <summary>
+	/// Class which represents options for form editing navigation keys.
+	/// </summary>
+	public class JqGridFormKeyboardNavigation
+	{
+		#region Fields
 
-        /// <summary>
-        /// Gets or sets the key for "record up".
-        /// </summary>
-        public char RecordUp { get; set; }
+		private char? recordUp;
 
-        /// <summary>
-        /// Gets or sets the key for "record down".
-        /// </summary>
-        public char RecordDown { get; set; }
-        #endregion
+		#endregion
 
-        #region Constructor
-        /// <summary>
-        /// Initializes a new instance of the JqGridFormKeyboardNavigation class.
-        /// </summary>
-        public JqGridFormKeyboardNavigation()
-        {
-            Enabled = false;
-            RecordUp = (char)38;
-            RecordDown = (char)40;
-        }
-        #endregion
+		#region Properties
+		/// <summary>
+		/// Gets or sets the value indicating if keyboard navigation is enabled.
+		/// </summary>
+		public bool? Enabled { get; set; }
 
-        #region Methods
-        internal bool IsDefault()
-        {
-            return (!Enabled && (RecordUp == (char)38) && (RecordDown == (char)40));
-        }
-        #endregion
-    }
+		/// <summary>
+		/// Gets or sets the key for "record up". If set this it automatically sets Enabled to true.
+		/// </summary>
+		public char? RecordUp
+		{
+			get => recordUp;
+			set
+			{
+				recordUp = value;
+				Enabled = true;
+			}
+		}
+
+		/// <summary>
+		/// Gets or sets the key for "record down". Required to be set RecordUp not null
+		/// </summary>
+		public char? RecordDown { get; set; }
+		#endregion
+	}
 }

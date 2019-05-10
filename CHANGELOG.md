@@ -1,4 +1,10 @@
-﻿## Lib.Web.Mvc.JqGridFork 7.2.1
+﻿## Lib.Web.Mvc.JqGridFork 7.3.0
+
+ - Navigator options and Inline navigator options now supports changed default values
+ - Options objects for grid and navigators now accessible from `JqGridHelper` objects only for get.
+ - Added new Guriddo JqGrid options from 5.3.2: `preserveSelection`, `editNextRowCell`, `tooltip` (column model)
+
+## Lib.Web.Mvc.JqGridFork 7.2.1
 
  - Renamed namespace to `Lib.Web.Mvc.JqGridFork`
  - Reduced versions of depended nuget packages for more compability

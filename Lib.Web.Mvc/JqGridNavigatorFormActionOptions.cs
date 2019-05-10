@@ -1,31 +1,45 @@
 ﻿namespace Lib.Web.Mvc.JqGridFork
 {
-    /// <summary>
-    /// Class which represents options for jqGrid Navigator form editing action.
-    /// </summary>
-    public abstract class JqGridNavigatorFormActionOptions : JqGridNavigatorActionOptions
-    {
-        #region Properties
-        /// <summary>
-        /// Gets or sets the function for event which is raised before initializing the new form data.
-        /// </summary>
-        public string BeforeInitData { get; set; }
+	/// <summary>
+	/// Class which represents options for jqGrid Navigator form editing action.
+	/// </summary>
+	public abstract class JqGridNavigatorFormActionOptions : JqGridNavigatorActionOptions
+	{
+		#region Fields
 
-        /// <summary>
-        /// Gets or sets the function for event which is raised before showing the form with the new data.
-        /// </summary>
-        public string BeforeShowForm { get; set; }
-        #endregion
+		private string beforeInitData;
+		private string beforeShowForm;
 
-        #region Constructor
-        /// <summary>
-        /// Initializes a new instance of the JqGridNavigatorFormActionOptions class.
-        /// </summary>
-        public JqGridNavigatorFormActionOptions()
-        {
-            BeforeInitData = null;
-            BeforeShowForm = null;
-        }
-        #endregion
-    }
+		#endregion
+
+		#region Properties
+
+		internal bool IsBeforeInitDataSetted { get; private set; }
+		/// <summary>
+		/// Gets or sets the function for event which is raised before initializing the new form data.
+		/// </summary>
+		public string BeforeInitData
+		{
+			get => beforeInitData; set
+			{
+				beforeInitData = value;
+				IsBeforeInitDataSetted = true;
+			}
+		}
+
+		internal bool IsBeforShowFormSetted { get; private set; }
+		/// <summary>
+		/// Gets or sets the function for event which is raised before showing the form with the new data.
+		/// </summary>
+		public string BeforeShowForm
+		{
+			get => beforeShowForm;
+			set
+			{
+				beforeShowForm = value;
+				IsBeforShowFormSetted = true;
+			}
+		}
+		#endregion
+	}
 }

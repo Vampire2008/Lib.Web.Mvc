@@ -16,17 +16,5 @@
         /// </summary>
         public JqGridFormButtonIcon CancelButtonIcon { get; set; }
         #endregion
-
-        #region Constructor
-        /// <summary>
-        /// Initializes a new instance of the JqGridNavigatorDeleteActionOptions class.
-        /// </summary>
-        public JqGridNavigatorDeleteActionOptions()
-        {
-            Width = 240;
-            DeleteButtonIcon = JqGridFormButtonIcon.DeleteIcon;
-            CancelButtonIcon = JqGridFormButtonIcon.CancelIcon;
-        }
-        #endregion
     }
 }

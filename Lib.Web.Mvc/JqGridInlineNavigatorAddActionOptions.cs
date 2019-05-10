@@ -2,55 +2,67 @@
 
 namespace Lib.Web.Mvc.JqGridFork
 {
-    /// <summary>
-    /// Class which represents options for jqGrid Inline Navigator add action.
-    /// </summary>
-    public class JqGridInlineNavigatorAddActionOptions
-    {
-        #region Properties
-        /// <summary>
-        /// Gets or sets the id for the new row
-        /// </summary>
-        public string RowId { get; set; }
+	/// <summary>
+	/// Class which represents options for jqGrid Inline Navigator add action.
+	/// </summary>
+	public class JqGridInlineNavigatorAddActionOptions
+	{
+		#region Fields
 
-        /// <summary>
-        /// Gets or sets the initial values for the new row.
-        /// </summary>
-        public object InitData { get; set; }
+		private string rowId;
+		private object initData;
 
-        /// <summary>
-        /// Gets or sets the new row position.
-        /// </summary>
-        public JqGridNewRowPositions Position { get; set; }
+		#endregion
 
-        /// <summary>
-        /// Gets or sets the value which defines if the DefaultValue from ColumnsModel should be used.
-        /// </summary>
-        public bool UseDefaultValues { get; set; }
+		#region Properties
 
-        /// <summary>
-        /// Gets or sets the value which defines if formatters should be used.
-        /// </summary>
-        public bool UseFormatter { get; set; }
+		internal bool IsRowIdSetted { get; private set; }
+		/// <summary>
+		/// Gets or sets the id for the new row
+		/// </summary>
+		public string RowId
+		{
+			get => rowId;
+			set
+			{
+				rowId = value;
+				IsRowIdSetted = true;
+			}
+		}
 
-        /// <summary>
-        /// Gets or sets edit options.
-        /// </summary>
-        public JqGridInlineNavigatorActionOptions Options { get; set; }
-        #endregion
+		internal bool IsInitDataSetted { get; private set; }
+		/// <summary>
+		/// Gets or sets the initial values for the new row.
+		/// </summary>
+		public object InitData
+		{
+			get => initData;
+			set
+			{
+				initData = value;
+				IsInitDataSetted = true;
+			}
+		}
 
-        #region Constructor
-        /// <summary>
-        /// Initializes a new instance of the JqGridInlineNavigatorAddActionOptions class.
-        /// </summary>
-        public JqGridInlineNavigatorAddActionOptions()
-        {
-            RowId = JqGridNavigatorDefaults.NewRowId;
-            Position = JqGridNewRowPositions.First;
-            UseDefaultValues = false;
-            UseFormatter = false;
-            Options = null;
-        }
-        #endregion
-    }
+		/// <summary>
+		/// Gets or sets the new row position.
+		/// </summary>
+		public JqGridNewRowPositions Position { get; set; } = JqGridNewRowPositions.Default;
+
+		/// <summary>
+		/// Gets or sets the value which defines if the DefaultValue from ColumnsModel should be used.
+		/// </summary>
+		public bool? UseDefaultValues { get; set; }
+
+		/// <summary>
+		/// Gets or sets the value which defines if formatters should be used.
+		/// </summary>
+		public bool? UseFormatter { get; set; }
+
+		/// <summary>
+		/// Gets or sets edit options.
+		/// </summary>
+		public JqGridInlineNavigatorActionOptions Options { get; set; }
+		#endregion
+	}
 }
