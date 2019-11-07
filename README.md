@@ -1,5 +1,6 @@
 Lib.Web.Mvc.JqGridFork
 ===========
+[![Nuget](https://img.shields.io/nuget/v/Lib.Web.Mvc.JqGridFork)](https://www.nuget.org/packages/Lib.Web.Mvc.JqGridFork/)
 
 My fork contains support changing default values for JqGrid in JavaScript. But there are some changes in public API. So if you update to my edition it will require change your code.
 And in my fork excluded all non JqGrid modules. If you want to use it use original library together with my fork.
