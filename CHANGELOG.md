@@ -1,4 +1,7 @@
-﻿## Lib.Web.Mvc.JqGridFork 7.3.0
+﻿## Lib.Web.Mvc.JqGridFork 7.4.0
+ - Added new Guriddo JqGrid options from 5.4.0
+
+## Lib.Web.Mvc.JqGridFork 7.3.0
 
  - Navigator options and Inline navigator options now supports changed default values
  - Options objects for grid and navigators now accessible from `JqGridHelper` objects only for get.

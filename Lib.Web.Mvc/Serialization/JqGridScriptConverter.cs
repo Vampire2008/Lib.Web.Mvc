@@ -72,6 +72,10 @@ namespace Lib.Web.Mvc.JqGridFork.Serialization
 					obj = DeserializeJqGridNestedTreeReader(dictionary, serializer);
 				else if (type == typeof(JqGridAdjacencyTreeReader))
 					obj = DeserializeJqGridAdjacencyTreeReader(dictionary, serializer);
+				else if (type == typeof(JqGridExportOptions))
+					obj = DeserializeJqGridExportOptions(dictionary, serializer);
+				else if (type == typeof(IEnumerable<JqGridCustomFilterOperand>))
+					obj = DeserializeJqGridCustomFilderDefinition(dictionary, serializer);
 			}
 
 			return obj;
@@ -117,6 +121,10 @@ namespace Lib.Web.Mvc.JqGridFork.Serialization
 					SerializeJqGridNestedTreeReader((JqGridNestedTreeReader)obj, serializer, serializedObj);
 				else if (obj is JqGridAdjacencyTreeReader)
 					SerializeJqGridAdjacencyTreeReader((JqGridAdjacencyTreeReader)obj, serializer, serializedObj);
+				else if (obj is JqGridExportOptions)
+					SerializeJqGridExportOptions((JqGridExportOptions)obj, serializer, serializedObj);
+				else if (obj is IEnumerable<JqGridCustomFilterOperand>)
+					SerializeJqGridCustomFilderDefinition((IEnumerable<JqGridCustomFilterOperand>)obj, serializer, serializedObj);
 			}
 
 			return serializedObj;
@@ -137,6 +145,7 @@ namespace Lib.Web.Mvc.JqGridFork.Serialization
 					obj.AltClass = serializedObj["altclass"]?.ToString();
 				obj.AltRows = GetBooleanFromSerializedObj(serializedObj, "altRows");
 				obj.AutoEncode = GetBooleanFromSerializedObj(serializedObj, "autoencode");
+				obj.AutoResizing = GetBooleanFromSerializedObj(serializedObj, "autoResizing");
 				obj.AutoWidth = GetBooleanFromSerializedObj(serializedObj, "autowidth");
 				if (serializedObj.ContainsKey("caption"))
 					obj.Caption = serializedObj["caption"]?.ToString();
@@ -164,6 +173,9 @@ namespace Lib.Web.Mvc.JqGridFork.Serialization
 					foreach (object innerSerializedObj in (ArrayList)serializedObj["colNames"])
 						obj.ColumnsNames.Add(innerSerializedObj.ToString());
 				}
+
+				if (serializedObj.ContainsKey("customFilterDef") && serializedObj["customFilterDef"] is IDictionary<string, object>)
+					obj.CustomFilterDefinition = DeserializeJqGridCustomFilderDefinition((IDictionary<string, object>)serializedObj["customFilterDef"], serializer);
 
 				if (serializedObj.ContainsKey("datastr"))
 					obj.DataString = serializedObj["datastr"]?.ToString();
@@ -196,6 +208,7 @@ namespace Lib.Web.Mvc.JqGridFork.Serialization
 				if (serializedObj.ContainsKey("groupingView") && serializedObj["groupingView"] is IDictionary<string, object>)
 					obj.GroupingView = DeserializeJqGridGroupingView((IDictionary<string, object>)serializedObj["groupingView"], serializer);
 
+				obj.HeaderRow = GetBooleanFromSerializedObj(serializedObj, "headerrow");
 				obj.Height = GetInt32FromSerializedObj(serializedObj, "height");
 				obj.Hidden = GetBooleanFromSerializedObj(serializedObj, "hiddengrid");
 				obj.HiddenEnabled = GetBooleanFromSerializedObj(serializedObj, "hidegrid");
@@ -269,6 +282,7 @@ namespace Lib.Web.Mvc.JqGridFork.Serialization
 					obj.Url = serializedObj["url"]?.ToString();
 				obj.ViewRecords = GetBooleanFromSerializedObj(serializedObj, "viewrecords");
 				obj.Width = GetInt32FromSerializedObj(serializedObj, "width");
+				obj.UserDataOnHeader = GetBooleanFromSerializedObj(serializedObj, "userDataOnHeader");
 
 				return obj;
 			}
@@ -512,6 +526,34 @@ namespace Lib.Web.Mvc.JqGridFork.Serialization
 				serializedObj.Add("width", obj.Width.Value);
 		}
 
+		private static IEnumerable<JqGridCustomFilterOperand> DeserializeJqGridCustomFilderDefinition(IDictionary<string,object> serializedObj, JavaScriptSerializer serializer)
+		{
+			List<JqGridCustomFilterOperand> obj = new List<JqGridCustomFilterOperand>();
+			foreach(string key in serializedObj.Keys)
+			{
+				JqGridCustomFilterOperand operand = new JqGridCustomFilterOperand();
+				operand.Id = key;
+				IDictionary<string, object> serializedOperand = (IDictionary<string, object>)serializedObj[key];
+				operand.Operand = GetStringFromSerializedObj(serializedOperand, "operand");
+				operand.Text = GetStringFromSerializedObj(serializedOperand, "text");
+				operand.Action = GetStringFromSerializedObj(serializedOperand, "action");
+				obj.Add(operand);
+			}
+			return obj;
+		}
+
+		private static void SerializeJqGridCustomFilderDefinition(IEnumerable<JqGridCustomFilterOperand> obj, JavaScriptSerializer serializer, Dictionary<string, object> serializedObj)
+		{
+			foreach(JqGridCustomFilterOperand operand in obj)
+			{
+				Dictionary<string, object> serializedOperand = new Dictionary<string, object>();
+				serializedOperand.Add("operand", operand.Operand);
+				serializedOperand.Add("text", operand.Text);
+				serializedOperand.Add("action", operand.Action);
+				serializedObj.Add(operand.Id, serializedOperand);
+			}
+		}
+
 		private static JqGridColumnModel DeserializeJqGridColumnModel(IDictionary<string, object> serializedObj, JavaScriptSerializer serializer)
 		{
 			string name = GetStringFromSerializedObj(serializedObj, "name");
@@ -520,6 +562,7 @@ namespace Lib.Web.Mvc.JqGridFork.Serialization
 				JqGridColumnModel obj = new JqGridColumnModel(name);
 
 				obj.Alignment = GetEnumFromSerializedObj(serializedObj, "align", obj.Alignment);
+				obj.AutoSize = GetBooleanFromSerializedObj(serializedObj, "autosize");
 				obj.DateFormat = GetSettedStringFromSerializedObj(serializedObj, "datefmt");
 				obj.Classes = GetSettedStringFromSerializedObj(serializedObj, "classes");
 				obj.Editable = GetBooleanFromSerializedObj(serializedObj, "editable");
@@ -530,6 +573,9 @@ namespace Lib.Web.Mvc.JqGridFork.Serialization
 
 				if (serializedObj.ContainsKey("editrules") && serializedObj["editrules"] is IDictionary<string, object>)
 					obj.EditRules = DeserializeJqGridColumnRules((IDictionary<string, object>)serializedObj["editrules"], serializer);
+
+				if (serializedObj.ContainsKey("exportoptions") && serializedObj["exportoptions"] is IDictionary<string, object>)
+					obj.ExportOptions = DeserializeJqGridExportOptions((IDictionary<string, object>)serializedObj["exportoptions"], serializer);
 
 				obj.Fixed = GetBooleanFromSerializedObj(serializedObj, "fixed");
 				obj.Frozen = GetBooleanFromSerializedObj(serializedObj, "frozen");
@@ -587,6 +633,9 @@ namespace Lib.Web.Mvc.JqGridFork.Serialization
 		{
 			if (obj.Alignment != JqGridAlignments.Default)
 				serializedObj.Add("align", obj.Alignment.ToString().ToLower());
+
+			if (obj.AutoSize.HasValue)
+				serializedObj.Add("autosize", obj.AutoSize.ToString().ToLower());
 
 			if (obj.Classes?.IsSetted ?? false)
 				serializedObj.Add("classes", obj.Classes);
@@ -700,6 +749,33 @@ namespace Lib.Web.Mvc.JqGridFork.Serialization
 
 			if (!string.IsNullOrWhiteSpace(obj.XmlMapping))
 				serializedObj.Add("xmlmap", obj.XmlMapping);
+		}
+
+		private static JqGridExportOptions DeserializeJqGridExportOptions(IDictionary<string,object> serializedObj, JavaScriptSerializer serializer)
+		{
+			JqGridExportOptions obj = new JqGridExportOptions();
+
+			obj.ExcelParser = GetBooleanFromSerializedObj(serializedObj, "excel_parser");
+
+			if (serializedObj.ContainsKey("excel_format"))
+				obj.ExcelFormat = serializedObj["excel_format"].ToString();
+
+			if (serializedObj.ContainsKey("replace_format"))
+				obj.ReplaceFormat = serializedObj["replace_format"].ToString();
+
+			return obj;
+		}
+
+		private static void SerializeJqGridExportOptions(JqGridExportOptions obj, JavaScriptSerializer serializer, Dictionary<string, object> serializedObj)
+		{
+			if (obj.ExcelParser.HasValue)
+				serializedObj.Add("excel_parser", obj.ExcelParser.Value.ToString().ToLower());
+
+			if (obj.IsExcelFormatSetted)
+				serializedObj.Add("excel_format", obj.ExcelFormat);
+
+			if (obj.IsReplaceFormatSetted)
+				serializedObj.Add("replace_format", obj.ReplaceFormat);
 		}
 
 		private static JqGridColumnEditOptions DeserializeJqGridColumnEditOptions(IDictionary<string, object> serializedObj, JavaScriptSerializer serializer)

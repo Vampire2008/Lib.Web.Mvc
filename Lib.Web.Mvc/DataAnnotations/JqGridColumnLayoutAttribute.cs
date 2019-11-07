@@ -21,6 +21,7 @@ namespace Lib.Web.Mvc.JqGridFork.DataAnnotations
 		private bool? _viewable;
 		private int? _width;
 		private string _tooltip;
+		private bool? _autoSize;
 
 		#endregion
 
@@ -29,6 +30,15 @@ namespace Lib.Web.Mvc.JqGridFork.DataAnnotations
 		/// Gets or sets the alignment of the cell in the grid body layer.
 		/// </summary>
 		public JqGridAlignments Alignment { get; set; }
+
+		/// <summary>
+		/// Get or sets enables resizing of the field to the longest text on the current page with double click on the line of the header.
+		/// </summary>
+		public bool AutoSize 
+		{ 
+			get => _autoSize ?? false; 
+			set => _autoSize = value; 
+		}
 
 		internal bool IsCellAttriburesSetted { get; set; }
 
@@ -159,6 +169,7 @@ namespace Lib.Web.Mvc.JqGridFork.DataAnnotations
 		public void OnMetadataCreated(ModelMetadata metadata)
 		{
 			if (Alignment != JqGridAlignments.Default) metadata.SetColumnAlignment(Alignment);
+			metadata.SetColumnAutoSize(_autoSize);
 			metadata.SetColumnCellAttributes(new SettedString(IsCellAttriburesSetted, CellAttributes));
 			metadata.SetColumnClasses(new SettedString(IsClassesSetted, Classes));
 			metadata.SetColumnFixed(_fixed);

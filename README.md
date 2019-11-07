@@ -12,6 +12,10 @@ Please read [wiki](https://github.com/Vampire2008/Lib.Web.Mvc.JqGridFork/wiki) o
 
 Other information you will find on [original repositoty](https://github.com/tpeczek/Lib.Web.Mvc)
 
+## Additional
+
+Also you can use with that library [SimpleJqGrid](https://github.com/Vampire2008/SimpleJqGrid) library that make more simple work with JqGrid
+
 ## Copyright and License
 
 Copyright © 2019 Kislenko Mikhail

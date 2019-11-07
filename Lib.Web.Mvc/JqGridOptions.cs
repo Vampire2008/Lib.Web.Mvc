@@ -191,6 +191,11 @@ namespace Lib.Web.Mvc.JqGridFork
 		public bool? AutoEncode { get; set; }
 
 		/// <summary>
+		/// Gets or sets the auto resizing of fields based on the length of the text on data loading.
+		/// </summary>
+		public bool? AutoResizing { get; set; }
+
+		/// <summary>
 		/// Gets or sets the value indicating if the grid width will be recalculated automatically to the width of the parent element.
 		/// </summary>
 		public bool? AutoWidth { get; set; }
@@ -321,6 +326,11 @@ namespace Lib.Web.Mvc.JqGridFork
 				IsCellEditingUrlSetted = true;
 			}
 		}
+
+		/// <summary>
+		/// Gets or sets custom filter object
+		/// </summary>
+		public IEnumerable<JqGridCustomFilterOperand> CustomFilterDefinition { get; set; }
 
 		internal bool IsDataStringSetted { get; private set; }
 		/// <summary>
@@ -486,6 +496,11 @@ namespace Lib.Web.Mvc.JqGridFork
 		/// Gets or sets the value indicating if the title attribute is added to the column headers.
 		/// </summary>
 		public bool? HeaderTitles { get; set; }
+
+		/// <summary>
+		/// Gets or sets the value that control a row above the first record and after the header.
+		/// </summary>
+		public bool? HeaderRow { get; set; }
 
 		/// <summary>
 		/// Gets or sets the height of the grid in pixels (default 'auto').
@@ -1081,6 +1096,11 @@ namespace Lib.Web.Mvc.JqGridFork
 		/// Gets or sets the value indicating if the values from user data should be placed on footer.
 		/// </summary>
 		public bool? UserDataOnFooter { get; set; }
+
+		/// <summary>
+		/// Gets or sets the value indicating if the values from user data should be placed on header.
+		/// </summary>
+		public bool? UserDataOnHeader { get; set; }
 
 		/// <summary>
 		/// Gets or sets if grid should display the beginning and ending record number out of the total number of records in the query (default: false)

@@ -18,5 +18,5 @@ using System.Runtime.InteropServices;
 // to COM components.  If you need to access a type in this assembly from 
 [assembly: ComVisible(false)]
 [assembly: Guid("68e6372a-38aa-427a-b5f8-1952175d5ccd")]
-[assembly: AssemblyVersion("7.3.0.0")]
-[assembly: AssemblyFileVersion("7.3.0.0")]
+[assembly: AssemblyVersion("7.4.0.0")]
+[assembly: AssemblyFileVersion("7.4.0.0")]

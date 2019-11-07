@@ -68,12 +68,21 @@ namespace Lib.Web.Mvc.JqGridFork.DataAnnotations
         {
             get => Options.DefaultValue;
             set => Options.DefaultValue = value;
-        }
+		}
 
-        /// <summary>
-        /// Gets or sets the value indicating if checkbox is disabled.
-        /// </summary>
-        public bool Disabled
+		/// <summary>
+		/// Gets or sets the value that indicating that value option for select formatter must be decoded
+		/// </summary>
+		//public bool DecodeValue
+		//{
+		//	get => Options.DecodeValue ?? false;
+		//	set => Options.DecodeValue = value;
+		//}
+
+		/// <summary>
+		/// Gets or sets the value indicating if checkbox is disabled.
+		/// </summary>
+		public bool Disabled
         {
             get => Options.Disabled ?? false;
             set => Options.Disabled = value;

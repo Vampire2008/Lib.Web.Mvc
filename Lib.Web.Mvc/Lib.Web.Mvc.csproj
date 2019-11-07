@@ -45,6 +45,7 @@
     </AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="DataAnnotations\JqGridColumnExportAttribute.cs" />
     <Compile Include="JetBrains.Annotations.cs" />
     <Compile Include="Constants\JqGridColumnPredefinedFormatters.cs" />
     <Compile Include="Constants\JqGridFilterToolbarDefaults.cs" />
@@ -57,6 +58,8 @@
     <Compile Include="JqGridBootstrap4IconSet.cs" />
     <Compile Include="JqGridColumnSortTypes.cs" />
     <Compile Include="JqGridCompatibilityModes.cs" />
+    <Compile Include="JqGridCustomFilterOperand.cs" />
+    <Compile Include="JqGridExportOptions.cs" />
     <Compile Include="JqGridExtendColumnModel.cs" />
     <Compile Include="JqGridFormButtonIcon.cs" />
     <Compile Include="JqGridFormButtonIconPositions.cs" />

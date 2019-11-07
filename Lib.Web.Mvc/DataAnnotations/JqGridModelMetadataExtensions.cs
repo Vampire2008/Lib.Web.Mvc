@@ -7,6 +7,7 @@ namespace Lib.Web.Mvc.JqGridFork.DataAnnotations
 	{
 		#region Fields
 		private const string _alignmentKey = "JqGridColumnModel.Alignment";
+		private const string _autoSizeKey = "JqGridColumnModel.AutoSize";
 		private const string _cellAttributesKey = "JqGridColumnModel.CellAttributes";
 		private const string _classesKey = "JqGridColumnModel.Classes";
 		private const string _dateFormatKey = "JqGridColumnModel.DateFormat";
@@ -42,6 +43,7 @@ namespace Lib.Web.Mvc.JqGridFork.DataAnnotations
 		private const string _keyKey = "JqGridColumnModel.Key";
 		private const string _xmlMappingKey = "JqGridColumnModel.XmlMapping";
 		private const string _tooltipKey = "JqGridColumnModel.Tooltip";
+		private const string _exportOptionsKey = "JqGridColumnModel.ExportOptions";
 		#endregion
 
 		#region Methods
@@ -55,6 +57,18 @@ namespace Lib.Web.Mvc.JqGridFork.DataAnnotations
 			if (metadata.AdditionalValues.ContainsKey(_alignmentKey))
 				return (JqGridAlignments)metadata.AdditionalValues[_alignmentKey];
 			return JqGridAlignments.Default;
+		}
+
+		internal static void SetColumnAutoSize(this ModelMetadata metadata, bool? autoSize)
+		{
+			metadata.AdditionalValues.Add(_autoSizeKey, autoSize);
+		}
+
+		internal static bool? GetColumnAutoSize(this ModelMetadata metadata)
+		{
+			if (metadata.AdditionalValues.ContainsKey(_autoSizeKey))
+				return (bool?)metadata.AdditionalValues[_autoSizeKey];
+			return null;
 		}
 
 		internal static void SetColumnCellAttributes(this ModelMetadata metadata, SettedString cellAttributes)
@@ -474,6 +488,18 @@ namespace Lib.Web.Mvc.JqGridFork.DataAnnotations
 		{
 			if (metadata.AdditionalValues.ContainsKey(_tooltipKey))
 				return (SettedString)metadata.AdditionalValues[_tooltipKey];
+			return null;
+		}
+
+		internal static void SetColumnExportOptions(this ModelMetadata metadata, JqGridExportOptions exportOptions)
+		{
+			metadata.AdditionalValues.Add(_exportOptionsKey, exportOptions);
+		}
+
+		internal static JqGridExportOptions GetColumnExportOptions(this ModelMetadata metadata)
+		{
+			if (metadata.AdditionalValues.ContainsKey(_exportOptionsKey))
+				return (JqGridExportOptions)metadata.AdditionalValues[_exportOptionsKey];
 			return null;
 		}
 		#endregion

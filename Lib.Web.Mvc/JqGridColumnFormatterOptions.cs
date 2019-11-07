@@ -47,9 +47,14 @@ namespace Lib.Web.Mvc.JqGridFork
                 _decimalSeparator = value;
                 IsDecimalSeparatorSetted = true;
             }
-        }
+		}
 
-        internal bool IsDefaultValueSetted { get; private set; }
+		/// <summary>
+		/// Gets or sets the value that indicating that value option for select formatter must be decoded
+		/// </summary>
+		public bool? DecodeValue { get; set; }
+
+		internal bool IsDefaultValueSetted { get; private set; }
         /// <summary>
         /// Gets or sets the default value.
         /// </summary>

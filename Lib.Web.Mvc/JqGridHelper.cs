@@ -302,6 +302,9 @@ namespace Lib.Web.Mvc.JqGridFork
 				if (columnModel.Alignment != JqGridAlignments.Default)
 					javaScriptBuilder.AppendFormat("align: '{0}', ", columnModel.Alignment.ToString().ToLower());
 
+				if (columnModel.AutoSize.HasValue)
+					javaScriptBuilder.AppendFormat("autosize: {0}, ", columnModel.AutoSize.Value.ToString().ToLower());
+
 				if (columnModel.Index?.IsSetted ?? false)
 					javaScriptBuilder.AppendFormat("index: '{0}', ", columnModel.Index.Value);
 
@@ -326,6 +329,8 @@ namespace Lib.Web.Mvc.JqGridFork
 						AppendFormOptions(columnModel.FormOptions, javaScriptBuilder);
 					}
 				}
+
+				AppendExportOptions(columnModel.ExportOptions, javaScriptBuilder);
 
 				if (columnModel.Fixed.HasValue)
 					javaScriptBuilder.AppendFormat("fixed: {0}, ", columnModel.Fixed.ToString().ToLower());
@@ -511,6 +516,29 @@ namespace Lib.Web.Mvc.JqGridFork
 				javaScriptBuilder.AppendFormat("value: '{0}', ", elementOptions.Value);
 			else if (elementOptions.ValueDictionary != null)
 				javaScriptBuilder.AppendFormat("value: {0}, ", serializer.Serialize(elementOptions.ValueDictionary));
+		}
+
+		private static void AppendExportOptions(JqGridExportOptions exportOptions, StringBuilder javaScriptBuilder)
+		{
+			if (exportOptions == null) return;
+			javaScriptBuilder.Append("exportoptions: { ");
+
+			if (exportOptions.ExcelParser.HasValue)
+				javaScriptBuilder.AppendFormat("excel_parser: {0}, ", exportOptions.ExcelParser.Value.ToString().ToLower());
+
+			if (exportOptions.IsExcelFormatSetted)
+				javaScriptBuilder.AppendFormat("excel_format: '{0}', ", exportOptions.ExcelFormat);
+
+			if (exportOptions.IsReplaceFormatSetted)
+				javaScriptBuilder.AppendFormat("replace_format: {0}, ", exportOptions.ReplaceFormat);
+
+			if (javaScriptBuilder[javaScriptBuilder.Length - 2] == ',')
+			{
+				javaScriptBuilder.Remove(javaScriptBuilder.Length - 2, 2);
+				javaScriptBuilder.Append(" }, ");
+			}
+			else
+				javaScriptBuilder.Remove(javaScriptBuilder.Length - 17, 17);
 		}
 
 		private static void AppendColumnRules(string rulesName, JqGridColumnRules rules, StringBuilder javaScriptBuilder)
@@ -755,6 +783,9 @@ namespace Lib.Web.Mvc.JqGridFork
 			if (Options.AutoEncode.HasValue)
 				javaScriptBuilder.AppendFormat("autoencode: {0},", Options.AutoEncode.Value.ToString().ToLower()).AppendLine();
 
+			if (Options.AutoResizing.HasValue)
+				javaScriptBuilder.AppendFormat("autoResizing: {0}, ", Options.AutoResizing.Value.ToString().ToLower()).AppendLine();
+
 			if (Options.AutoWidth.HasValue)
 				javaScriptBuilder.AppendFormat("autowidth: {0},", Options.AutoWidth.Value.ToString().ToLower()).AppendLine();
 
@@ -794,6 +825,8 @@ namespace Lib.Web.Mvc.JqGridFork
 
 			if (Options.IsCaptionSetted)
 				javaScriptBuilder.AppendFormat("caption: '{0}',", Options.Caption.ToNullString()).AppendLine();
+
+			AppendCustomFilterDefinition(javaScriptBuilder);
 
 			if (Options.HiddenEnabled.HasValue)
 				javaScriptBuilder.AppendFormat("hidegrid: {0},", Options.HiddenEnabled.Value.ToString().ToLower()).AppendLine();
@@ -858,6 +891,9 @@ namespace Lib.Web.Mvc.JqGridFork
 			if (Options.UserDataOnFooter.HasValue)
 				javaScriptBuilder.AppendFormat("userDataOnFooter: {0},", Options.UserDataOnFooter.Value.ToString().ToLower()).AppendLine();
 
+			if (Options.UserDataOnHeader.HasValue)
+				javaScriptBuilder.AppendFormat("userDataOnHeader: {0},", Options.UserDataOnHeader.Value.ToString().ToLower()).AppendLine();
+
 			if (Options.GridView.HasValue)
 				javaScriptBuilder.AppendFormat("gridview: {0},", Options.GridView.Value.ToString().ToLower()).AppendLine();
 
@@ -870,6 +906,9 @@ namespace Lib.Web.Mvc.JqGridFork
 
 			if (Options.HeaderTitles.HasValue)
 				javaScriptBuilder.AppendFormat("headertitles: {0},", Options.HeaderTitles.Value.ToString().ToLower()).AppendLine();
+
+			if (Options.HeaderRow.HasValue)
+				javaScriptBuilder.AppendFormat("headerrow: {0}, ", Options.HeaderRow.Value.ToString().ToLower()).AppendLine();
 
 			if (Options.HoverRows.HasValue)
 				javaScriptBuilder.AppendFormat("hoverrows: {0},", Options.HoverRows.Value.ToString().ToLower()).AppendLine();
@@ -1107,6 +1146,24 @@ namespace Lib.Web.Mvc.JqGridFork
 				javaScriptBuilder.AppendFormat("height: {0}", Options.Height.Value).AppendLine();
 			else
 				javaScriptBuilder.AppendLine("height: '100%'");
+		}
+
+		private void AppendCustomFilterDefinition(StringBuilder javaScriptBuilder)
+		{
+			if (Options.CustomFilterDefinition == null || !Options.CustomFilterDefinition.Any()) return;
+			javaScriptBuilder.Append("customFilterDef: { ");
+
+			foreach (JqGridCustomFilterOperand operand in Options.CustomFilterDefinition)
+			{
+				javaScriptBuilder.AppendFormat("'{0}': {{ operand: '{1}', text: '{2}', action: {3} }}, ", 
+					operand.Id,
+					operand.Operand,
+					operand.Text,
+					operand.Action);
+			}
+
+			javaScriptBuilder.Remove(javaScriptBuilder.Length - 2, 2);
+			javaScriptBuilder.AppendLine(" }, ");
 		}
 
 		private void AppendJsonReader(StringBuilder javaScriptBuilder)

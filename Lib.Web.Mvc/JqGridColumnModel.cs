@@ -20,6 +20,11 @@ namespace Lib.Web.Mvc.JqGridFork
 		public JqGridAlignments Alignment { get; set; } = JqGridAlignments.Default;
 
 		/// <summary>
+		/// Get or sets enables resizing of the field to the longest text on the current page with double click on the line of the header.
+		/// </summary>
+		public bool? AutoSize { get; set; }
+
+		/// <summary>
 		/// Gets or sets the function which can add attributes to the cell during the creation of the data (dynamically).
 		/// </summary>
 		public SettedString CellAttributes { get; set; }
@@ -53,6 +58,11 @@ namespace Lib.Web.Mvc.JqGridFork
 		/// Gets or sets the type for editable column.
 		/// </summary>
 		public JqGridColumnEditTypes EditType { get; set; } = JqGridColumnEditTypes.Default;
+
+		/// <summary>
+		/// Gets or sets Excel export options
+		/// </summary>
+		public JqGridExportOptions ExportOptions { get; set; }
 
 		/// <summary>
 		/// Gets or sets the value which defines if internal recalculation of the width of the column is disabled (default false).
@@ -228,6 +238,7 @@ namespace Lib.Web.Mvc.JqGridFork
 				RangeAttribute rangeAttribute = customAttributes.OfType<RangeAttribute>().FirstOrDefault();
 
 				Alignment = propertyMetadata.GetColumnAlignment();
+				AutoSize = propertyMetadata.GetColumnAutoSize();
 				CellAttributes = propertyMetadata.GetColumnCellAttributes();
 				Classes = propertyMetadata.GetColumnClasses();
 				DateFormat = propertyMetadata.GetColumnDateFormat();
@@ -270,6 +281,7 @@ namespace Lib.Web.Mvc.JqGridFork
 					}
 				}
 				EditType = propertyMetadata.GetColumnEditType();
+				ExportOptions = propertyMetadata.GetColumnExportOptions();
 
 				Formatter = propertyMetadata.GetColumnFormatter();
 				FormatterOptions = propertyMetadata.GetColumnFormatterOptions();
